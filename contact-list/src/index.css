@@ -4,6 +4,7 @@
     --backgroundColor1: black;
     --backgroundColor2: #141414;
     --fontColor1: #FFFFFF;
+    --mainBoxBorder: #282828;
 }
 
 @font-face {
@@ -17,20 +18,33 @@
 }
 
 html {
-    background-color: var(--backgroundColor2)
+    background-color: var(--backgroundColor2);
 }
 
 .App {
     background-color: var(--backgroundColor2);
 }
 
+.main-container {
+    /* border-top: 5px solid red; */
+    margin-top: 10%;
+}
+
+.main-container-narrow {
+    flex-grow: 1;
+    /* border-right: 5px solid red;
+    border-left: 5px solid red; */
+    margin-left: 30%;
+    margin-right: 30%;
+    height: 100%;
+}
+
 .contacts-box {
     flex: auto;
     flex-grow: 1;
-    background-color: beige;
-    margin-top: 10%;
-    margin-left: 30%;
-    margin-right: 30%;
+    /* background-color: beige; */
+    border: 1px solid;
+    border-color: var(--mainBoxBorder);
 }
 
 .contact-title {
@@ -60,8 +74,8 @@ html {
 .list-group-item {
     background-color: var(--backgroundColor2);
     display: flex;
-    /* border: none; */
-    border-color: red;
+    border: none;
+    /* border-color: red; */
     /*temporary*/
 }
 
@@ -69,9 +83,15 @@ html {
 /* avatarStyle={{ borderWidth: 2, borderColor: 'white', borderTopLeftRadius: 1, borderStyle:'solid' }} */
 
 .contact-entity {
+    display: flex;
     flex-grow: 1;
     margin-left: 25px;
     padding: 25px 0;
+}
+
+.contact-entity-icons {
+    display: flex;
+    margin-left: auto;
 }
 
 .contact-entity h3 {
@@ -92,4 +112,16 @@ html {
     line-height: 16px;
     /* identical to box height, or 133% */
     letter-spacing: 0.01em;
+}
+
+.dropdown {
+    background-color: var(--backgroundColor2);
+    position: relative;
+    display: inline-block;
+    align-items: center;
+}
+
+.dropdown-content {
+    right: 0;
+    left: auto;
 }

@@ -10,6 +10,9 @@ const ContactList = () => {
       <ListGroup.Item><ContactEntity /></ListGroup.Item>
       <ListGroup.Item><ContactEntity /></ListGroup.Item>
       <ListGroup.Item><ContactEntity /></ListGroup.Item>
+      <ListGroup.Item><ContactEntity /></ListGroup.Item>
+      <ListGroup.Item><ContactEntity /></ListGroup.Item>
+      <ListGroup.Item><ContactEntity /></ListGroup.Item>
       </ListGroup>
   )
 }

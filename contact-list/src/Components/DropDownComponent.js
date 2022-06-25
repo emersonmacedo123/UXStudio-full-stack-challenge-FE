@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import Dropdown from 'react-bootstrap/DropdownButton' 
 import DropdownMenu from 'react-bootstrap/esm/DropdownMenu'
 
@@ -12,17 +12,18 @@ import favIcon from '../Icons/VectorHeart.png'
 import removeIcon from '../Icons/VectorRemove.png'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import DropdownItem from 'react-bootstrap/esm/DropdownItem'
-import DropDownComponent from './DropDownComponent'
 
-export const ContactEntityIcons = () => {
-
+const DropDownComponent = () => {
   return (
-    <div className='contact-entity-icons'>
-      <DropDownComponent />
-        <button type="button" class="btn float-right ml-2"><img src={dots3Icon} /></button>
-        <button type="button" class="btn float-right ml-2"><img src={phoneIcon} /></button>
-        <button type="button" class="btn float-right ml-2"><img src={muteIcon} /></button>
+    <div className='dropdown-menu-end'>
+        <Dropdown title={<img src={dots3Icon} />}>
         
+        <DropdownItem><img src={engineIcon} /> Edit</DropdownItem>
+        <DropdownItem><img src={favIcon} /> Favorite</DropdownItem>
+        <DropdownItem><img src={removeIcon} /> Remove</DropdownItem>
+        </Dropdown>
     </div>
   )
 }
+
+export default DropDownComponent

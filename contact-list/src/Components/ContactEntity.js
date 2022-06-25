@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Avatar from 'react-avatar';
 import defaultAvatar from '../Images/default_avatar.png'; 
 import { ContactEntityIcons } from './ContactEntityIcons';
-
+import { Dropdown } from 'bootstrap';
 
 const ContactEntity = (props) => {
 
@@ -23,9 +23,12 @@ const ContactEntity = (props) => {
         </div>
 
         <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} className='contact-entity'>
-          {isHovering && <ContactEntityIcons />}
-          <h3>Name</h3>
-          <h4>Phone Number</h4>
+          <div>
+            <h3>Name</h3>
+            <h4>Phone Number</h4>
+          </div>
+          
+          {isHovering && <ContactEntityIcons /> }
         </div>
         </>
         
