@@ -1,13 +1,105 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+    --newBlue: #1e90ff;
+    --white: #ffffff;
+    --backgroundColor1: black;
+    --backgroundColor2: #141414;
+    --fontColor1: #FFFFFF;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+    font-family: "Glysa";
+    src: local("Glysa"), url("./fonts/Glysa.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "Lexend Deca";
+    src: local("LexendDeca-VariableFont_wght"), url("./fonts/LexendDeca-VariableFont_wght.ttf") format("truetype");
+}
+
+html {
+    background-color: var(--backgroundColor2)
+}
+
+.App {
+    background-color: var(--backgroundColor2);
+}
+
+.contacts-box {
+    flex: auto;
+    background-color: beige;
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 1440px;
+    height: auto;
+}
+
+.contact-title {
+    flex: auto;
+    background-color: var(--backgroundColor2);
+    width: auto;
+    height: 96px;
+    display: flex;
+}
+
+.contact-title h1 {
+    margin-left: 10px;
+    color: var(--fontColor1);
+    font-family: 'Glysa';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 48px;
+}
+
+.list-group {
+    background-color: var(--backgroundColor2);
+    border-radius: 0;
+}
+
+.list-group-item {
+    background-color: var(--backgroundColor2);
+    display: flex;
+    /* border: none; */
+    border-color: red;
+    /*temporary*/
+}
+
+.list-group-item avatar {
+    flex-grow: 1;
+    /* box-sizing: border-box;
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%; */
+}
+
+
+/* avatarStyle={{ borderWidth: 2, borderColor: 'white', borderTopLeftRadius: 1, borderStyle:'solid' }} */
+
+.contact-entity {
+    flex-grow: 5;
+    margin-left: 25px;
+    padding: 25px 0;
+}
+
+.contact-entity h3 {
+    color: var(--fontColor1);
+    font-family: 'Lexend Deca';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+}
+
+.contact-entity h4 {
+    font-family: 'Lexend Deca';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    /* identical to box height, or 133% */
+    letter-spacing: 0.01em;
 }
