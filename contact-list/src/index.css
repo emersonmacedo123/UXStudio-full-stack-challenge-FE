@@ -26,23 +26,23 @@ html {
 
 .contacts-box {
     flex: auto;
+    flex-grow: 1;
     background-color: beige;
     margin-top: 10%;
-    margin-left: 10%;
-    margin-right: 10%;
-    width: 1440px;
-    height: auto;
+    margin-left: 30%;
+    margin-right: 30%;
 }
 
 .contact-title {
     flex: auto;
+    flex-grow: 1;
     background-color: var(--backgroundColor2);
-    width: auto;
-    height: 96px;
     display: flex;
 }
 
 .contact-title h1 {
+    flex: auto;
+    flex-grow: 1;
     margin-left: 10px;
     color: var(--fontColor1);
     font-family: 'Glysa';
@@ -65,21 +65,11 @@ html {
     /*temporary*/
 }
 
-.list-group-item avatar {
-    flex-grow: 1;
-    /* box-sizing: border-box;
-    position: absolute;
-    left: 0%;
-    right: 0%;
-    top: 0%;
-    bottom: 0%; */
-}
-
 
 /* avatarStyle={{ borderWidth: 2, borderColor: 'white', borderTopLeftRadius: 1, borderStyle:'solid' }} */
 
 .contact-entity {
-    flex-grow: 5;
+    flex-grow: 1;
     margin-left: 25px;
     padding: 25px 0;
 }
