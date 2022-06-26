@@ -12,7 +12,7 @@ import axios from 'axios';
 const EditModal = (props) => {
 
     
-    const [imagePath, setImagePath] = useState('')
+    const [imagePath, setImagePath] = useState(props.imagePath)
     const [contactName, setContactName] = useState(props.name)
     const [phoneNumber, setPhoneNumber] = useState(props.phoneNumber)
     const [emailAddress, setEmailAddress] = useState(props.emailAddress)
@@ -56,8 +56,8 @@ const EditModal = (props) => {
     }
 
     const handleFile = (e) => {
-        setAvatarImage(require('../Images/' + e.target.files[0].name))
-        setImagePath('/Images/' + e.target.files[0].name);
+        setAvatarImage('/images/' + e.target.files[0].name);
+        setImagePath('/images/' + e.target.files[0].name);
     }
 
     return (
