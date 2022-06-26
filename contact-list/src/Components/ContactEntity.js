@@ -33,7 +33,7 @@ const ContactEntity = (props) => {
             <h4>{props.phoneNumber}</h4>
           </div>
           
-          {isHovering && <ContactEntityIcons /> }
+          {isHovering && <ContactEntityIcons id={props.id}/> }
         </div>
         </>
         

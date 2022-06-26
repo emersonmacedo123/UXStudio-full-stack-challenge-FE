@@ -53,10 +53,6 @@ const MyVerticallyCenteredModal = (props) => {
         window.location.reload(false);
     }
 
-    
-
-    
-
 
     const handleFile = (e) => {
         setAvatarImage(require('../Images/' + e.target.files[0].name))
