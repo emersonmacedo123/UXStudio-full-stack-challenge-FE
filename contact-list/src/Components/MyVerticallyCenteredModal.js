@@ -82,7 +82,7 @@ const MyVerticallyCenteredModal = (props) => {
                         <Avatar src={avatarImage} round={true} avatarStyle={{ borderWidth: 1, borderColor: 'green', borderRadius: 5, borderStyle: 'solid' }} />
                         <button onClick={handleClick} type="button" className="btn ml-2"><img src={addPictureIcon} alt="my image" /></button>
                         <input ref={ref} type="file" name='file' onChange={(e) => handleFile(e)} style={{ display: 'none' }} />
-                        <button type="button" className="btn ml-2"><img src={deletePictureIcon} /></button>
+                        <button type="button" className="btn ml-2"><img src={deletePictureIcon} onClick={() => setAvatarImage(defaultAvatar)} /></button>
                     </div>
 
                     <Form.Group className="mb-3" controlId="form-name">
