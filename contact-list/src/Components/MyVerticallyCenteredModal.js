@@ -8,31 +8,35 @@ import newImageTest from '../Images/LucyprofilePictres.png';
 import addPictureIcon from '../Icons/Icon + LabeladdPicture.png'
 import deletePictureIcon from '../Icons/Icon onlydeletePhoto.png'
 import UploadImageButton from './UploadImageButton';
+import axios from 'axios';
+import {useImage} from 'react-image'
 
 
 
 const MyVerticallyCenteredModal = (props) => {
+    const [imagePath, setImagePath] = useState('')
     const [contactName, setContactName] = useState('')
     const [phoneNumber, setPhoneNumber] = useState('')
     const [emailAddress, setEmailAddress] = useState('')
-    const [imagePath, setImagePath] = useState('')
+    const [avatarImage, setAvatarImage] = useState(defaultAvatar);
 
     const saveNewContact = (event) => {
         //get the data from states
         const newContact = {
-            contactName,
-            phoneNumber,
-            emailAddress,
-            imagePath
+            "name": contactName,
+            "phoneNumber": phoneNumber,
+            "emailAddress": emailAddress,
+            "imagePath": imagePath
         }
+        
         //confirm getting data
         console.log(newContact);
 
-        // axios.post("http://localhost:8080/registration", registrationDetails).then(response => {
-        //     if (response.data != null) {
-        //         console.log(registrationDetails)
-        //     }
-        // })
+        axios.post("http://localhost:8080/new-contact", newContact).then(response => {
+            if (response.data != null) {
+                console.log(newContact)
+            }
+        })
 
         //prevent refreshing the page after submit
         event.preventDefault();
@@ -41,19 +45,22 @@ const MyVerticallyCenteredModal = (props) => {
         setContactName('');
         setPhoneNumber('');
         setEmailAddress('');
-        setImagePath('');
-            
-        // window.location.reload(false);
+        setAvatarImage('');
+
+        
         const closeModal = props.onHide;
         closeModal();
+        window.location.reload(false);
     }
 
     
 
-    const [avatarImage, setAvatarImage] = useState(defaultAvatar);
+    
+
 
     const handleFile = (e) => {
         setAvatarImage(require('../Images/' + e.target.files[0].name))
+        setImagePath('/Images/' + e.target.files[0].name);
     }
 
     const ref = useRef()
@@ -81,25 +88,37 @@ const MyVerticallyCenteredModal = (props) => {
                     <Form.Group className="mb-3" controlId="form-name">
                         <Form.Label>Name</Form.Label>
                         <Form.Control
+                            required
+                            autoComplete='off'
                             type="text"
                             placeholder="Jamie Wright"
                             autoFocus
+                            value={contactName}
+                            onChange={(e) => setContactName(e.target.value)}
                         />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="form-phone-number">
                         <Form.Label>Phone Number</Form.Label>
                         <Form.Control
+                            required
+                            autoComplete='off'
                             type="text"
                             placeholder="+36 20 1234 5678"
+                            value={phoneNumber}
+                            onChange={(e) => setPhoneNumber(e.target.value)}
                         />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                         <Form.Label>Email address</Form.Label>
                         <Form.Control
+                            required
+                            autoComplete='off'
                             type="email"
                             placeholder="name@example.com"
+                            value={emailAddress}
+                            onChange={(e) => setEmailAddress(e.target.value)}
                         />
                     </Form.Group>
                 </Form>
