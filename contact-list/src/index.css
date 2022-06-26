@@ -115,13 +115,33 @@ html {
 }
 
 .dropdown {
-    background-color: var(--backgroundColor2);
     position: relative;
     display: inline-block;
     align-items: center;
 }
 
-.dropdown-content {
+.dropdown-menu {
+    background-color: #141414;
+    background: #141414;
+    border: none;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.dropdown-item {
+    background-color: #141414;
+    background: #141414;
+    color: white;
+}
+
+.dropdown-item {
+    color: var(--fontColor1);
+}
+
+.dropdown-content #text {
+    color: var(--fontColor1);
     right: 0;
     left: auto;
 }
