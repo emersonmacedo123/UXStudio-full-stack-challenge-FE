@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useState} from 'react'
 import Dropdown from 'react-bootstrap/DropdownButton' 
 import DropdownMenu from 'react-bootstrap/esm/DropdownMenu'
 import axios from 'axios'
@@ -12,8 +12,11 @@ import favIcon from '../Icons/VectorHeart.png'
 import removeIcon from '../Icons/VectorRemove.png'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import DropdownItem from 'react-bootstrap/esm/DropdownItem'
+import EditModal from './EditModal'
+
 
 const DropDownComponent = (props) => {
+  const [editModalShow, setEditModalShow] = useState(false);
   const deleteContact = () => {
     const toBeDeleted = {
       "id": props.id
@@ -30,10 +33,11 @@ const DropDownComponent = (props) => {
   return (
     <div className='dropdown-menu-end'>
         <Dropdown variant="dark" title={<img src={dots3Icon} />}>
-            <DropdownItem><img src={engineIcon} /> Edit</DropdownItem>
+            <DropdownItem onClick={() => setEditModalShow(true)}><img src={engineIcon} /> Edit</DropdownItem>
             <DropdownItem><img src={favIcon} /> Favorite</DropdownItem>
             <DropdownItem onClick={deleteContact}><img src={removeIcon} /> Remove</DropdownItem>
         </Dropdown>
+        <EditModal show={editModalShow} onHide={() => setEditModalShow(false)} id={props.id} name={props.name} phoneNumber={props.phoneNumber} emailAddress={props.emailAddress} imagePath={props.imagePath} />
     </div>
   )
 }

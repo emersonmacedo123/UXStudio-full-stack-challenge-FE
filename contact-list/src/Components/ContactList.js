@@ -29,7 +29,7 @@ const ContactList = () => {
           name={contact.name} 
           phoneNumber={contact.phoneNumber}
           emailAddress={contact.emailAddress}
-          avatarImage={contact.imagePath}  /></ListGroup.Item>
+          imagePath={contact.imagePath}  /></ListGroup.Item>
       )}
       
       
