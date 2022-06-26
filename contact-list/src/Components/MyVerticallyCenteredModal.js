@@ -4,12 +4,10 @@ import Button from 'react-bootstrap/esm/Button'
 import { Form } from "react-bootstrap";
 import Avatar from 'react-avatar';
 import defaultAvatar from '../Images/default_avatar.png';
-import newImageTest from '../Images/LucyprofilePictres.png';
 import addPictureIcon from '../Icons/Icon + LabeladdPicture.png'
 import deletePictureIcon from '../Icons/Icon onlydeletePhoto.png'
-import UploadImageButton from './UploadImageButton';
 import axios from 'axios';
-import {useImage} from 'react-image'
+
 
 
 
@@ -66,7 +64,7 @@ const MyVerticallyCenteredModal = (props) => {
 
     return (
         <Modal className='modal-container' {...props} size="md" aria-labelledby="contained-modal-title-vcenter" centered>
-            <Modal.Header closeButton>
+            <Modal.Header>
                 <Modal.Title id="contained-modal-title-vcenter">
                     Add Contact
                 </Modal.Title>

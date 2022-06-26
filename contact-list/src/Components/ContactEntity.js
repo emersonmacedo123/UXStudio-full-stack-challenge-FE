@@ -6,7 +6,6 @@ import { ContactEntityIcons } from './ContactEntityIcons';
 
 const ContactEntity = (props) => {
 
-  const [avatarImage, setAvatarImage] = useState(defaultAvatar);
   var newImage = require("C:/Users/Asus Zenbook/Documents/GitHub/8 - Interviews Full Stack/02 - UX Studio -  Full Stack Dev Challenge - FrontEnd/UXStudio-full-stack-challenge-FE/contact-list/src" + props.imagePath)
   
   

@@ -4,16 +4,13 @@ import Button from 'react-bootstrap/esm/Button'
 import { Form } from "react-bootstrap";
 import Avatar from 'react-avatar';
 import defaultAvatar from '../Images/default_avatar.png';
-import newImageTest from '../Images/LucyprofilePictres.png';
 import addPictureIcon from '../Icons/Icon + LabeladdPicture.png'
 import deletePictureIcon from '../Icons/Icon onlydeletePhoto.png'
-import UploadImageButton from './UploadImageButton';
 import axios from 'axios';
-import { useImage } from 'react-image'
+
 
 const EditModal = (props) => {
 
-    console.log(props.imagePath)
     var oldImage = require("C:/Users/Asus Zenbook/Documents/GitHub/8 - Interviews Full Stack/02 - UX Studio -  Full Stack Dev Challenge - FrontEnd/UXStudio-full-stack-challenge-FE/contact-list/src" + props.imagePath)
     const [imagePath, setImagePath] = useState('')
     const [contactName, setContactName] = useState(props.name)
@@ -21,15 +18,7 @@ const EditModal = (props) => {
     const [emailAddress, setEmailAddress] = useState(props.emailAddress)
     const [avatarImage, setAvatarImage] = useState(oldImage);
 
-    const ref = useRef()
-    const handleClick = (e) => {
-        ref.current.click()
-    }
-
-    const handleFile = (e) => {
-        setAvatarImage(require('../Images/' + e.target.files[0].name))
-        setImagePath('/Images/' + e.target.files[0].name);
-    }
+    
 
     const updateContact = (event) => {
         //get the data from states
@@ -58,23 +47,30 @@ const EditModal = (props) => {
         setEmailAddress('');
         setAvatarImage('');
 
-        
-        const closeModal = props.onHide;
-        closeModal();
         window.location.reload(false);
+    }
+
+    const ref = useRef()
+    const handleClick = (e) => {
+        ref.current.click()
+    }
+
+    const handleFile = (e) => {
+        setAvatarImage(require('../Images/' + e.target.files[0].name))
+        setImagePath('/Images/' + e.target.files[0].name);
     }
 
     return (
         <div>
-            <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered >
-                <Modal.Header closeButton>
+            <Modal className='modal-container' {...props} size="md" aria-labelledby="contained-modal-title-vcenter" centered >
+                <Modal.Header>
                     <Modal.Title id="contained-modal-title-vcenter">
                         Edit Contact
                     </Modal.Title>
                 </Modal.Header>
+
                 <Modal.Body>
                     <Form>
-                        {/* <img src={oldImage}></img> */}
                         <div className='modal-layer-1'>
                             <Avatar src={avatarImage} round={true} avatarStyle={{ borderWidth: 1, borderColor: 'green', borderRadius: 5, borderStyle: 'solid' }} />
                             <button onClick={handleClick} type="button" className="btn ml-2"><img src={addPictureIcon} alt="my image" /></button>
@@ -105,7 +101,7 @@ const EditModal = (props) => {
                             />
                         </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                        <Form.Group className="mb-3" controlId="form-emailAddress">
                             <Form.Label>Email address</Form.Label>
                             <Form.Control
                                 required
@@ -117,6 +113,7 @@ const EditModal = (props) => {
                         </Form.Group>
                     </Form>
                 </Modal.Body>
+
                 <Modal.Footer>
                     <Button className='modal-button' onClick={props.onHide}>Cancel</Button>
                     <Button type="submit" className='modal-button' onClick={updateContact}>Edit</Button>

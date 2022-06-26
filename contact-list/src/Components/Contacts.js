@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ContactList from './ContactList'
 import MyVerticallyCenteredModal from './MyVerticallyCenteredModal'
-import axios from 'axios';
+
 
 //import icons
 import arrowBackIcon from '../Icons/VectorarrowBack.png'

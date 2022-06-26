@@ -1,11 +1,11 @@
 import React from 'react'
+import DropDownComponent from './DropDownComponent'
 
 
 //import icons
 import muteIcon from '../Icons/Vectormute.png'
 import phoneIcon from '../Icons/VectorPhones.png'
 
-import DropDownComponent from './DropDownComponent'
 
 export const ContactEntityIcons = (props) => {
 

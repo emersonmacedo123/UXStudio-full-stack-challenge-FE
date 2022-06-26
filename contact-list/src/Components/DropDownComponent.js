@@ -1,16 +1,12 @@
 import React , {useState} from 'react'
 import Dropdown from 'react-bootstrap/DropdownButton' 
-import DropdownMenu from 'react-bootstrap/esm/DropdownMenu'
 import axios from 'axios'
 
 //import icons
-import muteIcon from '../Icons/Vectormute.png'
-import phoneIcon from '../Icons/VectorPhones.png'
 import dots3Icon from '../Icons/VectorthreeDots.png'
 import engineIcon from '../Icons/Vectorengine.png'
 import favIcon from '../Icons/VectorHeart.png'
 import removeIcon from '../Icons/VectorRemove.png'
-import DropdownButton from 'react-bootstrap/DropdownButton'
 import DropdownItem from 'react-bootstrap/esm/DropdownItem'
 import EditModal from './EditModal'
 
