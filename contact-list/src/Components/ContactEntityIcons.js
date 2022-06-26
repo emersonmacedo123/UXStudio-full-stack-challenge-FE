@@ -19,7 +19,7 @@ export const ContactEntityIcons = () => {
   return (
     <div className='contact-entity-icons'>
       <DropDownComponent />
-        <button type="button" class="btn float-right ml-2"><img src={dots3Icon} /></button>
+        {/* <button type="button" class="btn float-right ml-2"><img src={dots3Icon} /></button> */}
         <button type="button" class="btn float-right ml-2"><img src={phoneIcon} /></button>
         <button type="button" class="btn float-right ml-2"><img src={muteIcon} /></button>
         

@@ -16,11 +16,10 @@ import DropdownItem from 'react-bootstrap/esm/DropdownItem'
 const DropDownComponent = () => {
   return (
     <div className='dropdown-menu-end'>
-        <Dropdown title={<img src={dots3Icon} />}>
-        
-        <DropdownItem><img src={engineIcon} /> Edit</DropdownItem>
-        <DropdownItem><img src={favIcon} /> Favorite</DropdownItem>
-        <DropdownItem><img src={removeIcon} /> Remove</DropdownItem>
+        <Dropdown variant="dark" title={<img src={dots3Icon} />}>
+            <DropdownItem><img src={engineIcon} /> Edit</DropdownItem>
+            <DropdownItem><img src={favIcon} /> Favorite</DropdownItem>
+            <DropdownItem><img src={removeIcon} /> Remove</DropdownItem>
         </Dropdown>
     </div>
   )
