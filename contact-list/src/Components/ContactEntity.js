@@ -6,9 +6,6 @@ import { ContactEntityIcons } from './ContactEntityIcons';
 
 const ContactEntity = (props) => {
 
-  var newImage = require("C:/Users/Asus Zenbook/Documents/GitHub/8 - Interviews Full Stack/02 - UX Studio -  Full Stack Dev Challenge - FrontEnd/UXStudio-full-stack-challenge-FE/contact-list/src" + props.imagePath)
-  
-  
   //for show buttons when hovering
   const [isHovering, setIsHovering] = useState(false);
   const handleMouseOver = () => {
@@ -22,8 +19,9 @@ const ContactEntity = (props) => {
 
   return (
         <>
+        {/* <img src='/images/AdebayoprofilePictres.png' alt="image" /> */}
         <div className='avatar'>          
-          <Avatar  src={newImage} round={true} avatarStyle={{  borderWidth: 1, borderColor: 'green', borderRadius: 5, borderStyle:'solid' }}/>
+          <Avatar  src={props.imagePath} round={true} avatarStyle={{  borderWidth: 1, borderColor: 'green', borderRadius: 5, borderStyle:'solid' }}/>
         </div>
 
         <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} className='contact-entity'>

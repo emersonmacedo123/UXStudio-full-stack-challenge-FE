@@ -3,7 +3,7 @@ import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/esm/Button'
 import { Form } from "react-bootstrap";
 import Avatar from 'react-avatar';
-import defaultAvatar from '../Images/default_avatar.png';
+// import defaultAvatar from '/images/default_avatar.png';
 import addPictureIcon from '../Icons/Icon + LabeladdPicture.png'
 import deletePictureIcon from '../Icons/Icon onlydeletePhoto.png'
 import axios from 'axios';
@@ -16,7 +16,7 @@ const MyVerticallyCenteredModal = (props) => {
     const [contactName, setContactName] = useState('')
     const [phoneNumber, setPhoneNumber] = useState('')
     const [emailAddress, setEmailAddress] = useState('')
-    const [avatarImage, setAvatarImage] = useState(defaultAvatar);
+    const [avatarImage, setAvatarImage] = useState('/images/default_avatar.png');
 
     const saveNewContact = (event) => {
         //get the data from states
@@ -53,8 +53,8 @@ const MyVerticallyCenteredModal = (props) => {
 
 
     const handleFile = (e) => {
-        setAvatarImage(require('../Images/' + e.target.files[0].name))
-        setImagePath('/Images/' + e.target.files[0].name);
+        setAvatarImage('/images/' + e.target.files[0].name)
+        setImagePath('/images/' + e.target.files[0].name);
     }
 
     const ref = useRef()
@@ -76,7 +76,7 @@ const MyVerticallyCenteredModal = (props) => {
                         <Avatar src={avatarImage} round={true} avatarStyle={{ borderWidth: 1, borderColor: 'green', borderRadius: 5, borderStyle: 'solid' }} />
                         <button onClick={handleClick} type="button" className="btn ml-2"><img src={addPictureIcon} alt="my image" /></button>
                         <input ref={ref} type="file" name='file' onChange={(e) => handleFile(e)} style={{ display: 'none' }} />
-                        <button type="button" className="btn ml-2"><img src={deletePictureIcon} onClick={() => setAvatarImage(defaultAvatar)} /></button>
+                        <button type="button" className="btn ml-2"><img src={deletePictureIcon} onClick={() => setAvatarImage('/images/default_avatar.png')} /></button>
                     </div>
 
                     <Form.Group className="mb-3" controlId="form-name">
@@ -126,9 +126,6 @@ const MyVerticallyCenteredModal = (props) => {
     )
 }
 
-MyVerticallyCenteredModal.defaultProps = {
-    avatarImage: defaultAvatar
 
-};
 
 export default MyVerticallyCenteredModal

@@ -11,12 +11,12 @@ import axios from 'axios';
 
 const EditModal = (props) => {
 
-    var oldImage = require("C:/Users/Asus Zenbook/Documents/GitHub/8 - Interviews Full Stack/02 - UX Studio -  Full Stack Dev Challenge - FrontEnd/UXStudio-full-stack-challenge-FE/contact-list/src" + props.imagePath)
+    
     const [imagePath, setImagePath] = useState('')
     const [contactName, setContactName] = useState(props.name)
     const [phoneNumber, setPhoneNumber] = useState(props.phoneNumber)
     const [emailAddress, setEmailAddress] = useState(props.emailAddress)
-    const [avatarImage, setAvatarImage] = useState(oldImage);
+    const [avatarImage, setAvatarImage] = useState(props.imagePath);
 
     
 
