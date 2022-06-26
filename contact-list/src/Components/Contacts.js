@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import ContactList from './ContactList'
 import MyVerticallyCenteredModal from './MyVerticallyCenteredModal'
+import { useLocation } from 'react-router-dom'
 
 
 //import icons
@@ -12,7 +13,6 @@ import addNewIcon from '../Icons/State=Default, Type=PrimaryaddNewShape.png'
 
 const Contacts = () => {
   const [modalShow, setModalShow] = useState(false);
-
 
   return (
     <div className='main-container'>
