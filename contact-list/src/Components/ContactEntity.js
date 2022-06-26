@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Avatar from 'react-avatar';
 import defaultAvatar from '../Images/default_avatar.png'; 
 import { ContactEntityIcons } from './ContactEntityIcons';
-import { Dropdown } from 'bootstrap';
+
 
 const ContactEntity = (props) => {
 

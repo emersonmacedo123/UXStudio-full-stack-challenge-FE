@@ -1,7 +1,7 @@
-import React from 'react'
-import ContactEntity from './ContactEntity'
+import React, {useState } from 'react'
 import ContactList from './ContactList'
-import { Dropdown } from 'bootstrap'
+import Button from 'react-bootstrap/esm/Button'
+import MyVerticallyCenteredModal from './MyVerticallyCenteredModal'
 
 
 //import icons
@@ -12,6 +12,9 @@ import addNewIcon from '../Icons/State=Default, Type=PrimaryaddNewShape.png'
 
 
 const Contacts = () => {
+  const [modalShow, setModalShow] = useState(false);
+
+
   return (
     <div className='main-container'>
       <div className='main-container-narrow'>
@@ -21,7 +24,12 @@ const Contacts = () => {
             <h1>Contacts</h1>
             <button type="button" class="btn float-right ml-2"><img src={engineIcon} alt="my image" /></button>
             <button type="button" class="btn float-right ml-2"><img src={userProfileIcon} alt="my image" /></button>
-            <button type="button" class="btn float-right ml-2"><img src={addNewIcon} alt="my image" /></button>
+            
+            {/* {for the form add new contact} */}
+            <button type="button" class="btn float-right ml-2" onClick={() => setModalShow(true)}>
+            <img src={addNewIcon} alt="my image" />
+            </button>
+            <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
         </div>
         <ContactList />
         
