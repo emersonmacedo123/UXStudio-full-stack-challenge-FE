@@ -10,7 +10,46 @@ import deletePictureIcon from '../Icons/Icon onlydeletePhoto.png'
 import UploadImageButton from './UploadImageButton';
 
 
+
 const MyVerticallyCenteredModal = (props) => {
+    const [contactName, setContactName] = useState('')
+    const [phoneNumber, setPhoneNumber] = useState('')
+    const [emailAddress, setEmailAddress] = useState('')
+    const [imagePath, setImagePath] = useState('')
+
+    const saveNewContact = (event) => {
+        //get the data from states
+        const newContact = {
+            contactName,
+            phoneNumber,
+            emailAddress,
+            imagePath
+        }
+        //confirm getting data
+        console.log(newContact);
+
+        // axios.post("http://localhost:8080/registration", registrationDetails).then(response => {
+        //     if (response.data != null) {
+        //         console.log(registrationDetails)
+        //     }
+        // })
+
+        //prevent refreshing the page after submit
+        event.preventDefault();
+
+        //set values to initial state after submitted
+        setContactName('');
+        setPhoneNumber('');
+        setEmailAddress('');
+        setImagePath('');
+            
+        // window.location.reload(false);
+        const closeModal = props.onHide;
+        closeModal();
+    }
+
+    
+
     const [avatarImage, setAvatarImage] = useState(defaultAvatar);
 
     const handleFile = (e) => {
@@ -21,8 +60,6 @@ const MyVerticallyCenteredModal = (props) => {
     const handleClick = (e) => {
         ref.current.click()
     }
-
-
 
     return (
         <Modal className='modal-container' {...props} size="md" aria-labelledby="contained-modal-title-vcenter" centered>
@@ -36,10 +73,8 @@ const MyVerticallyCenteredModal = (props) => {
                 <Form>
                     <div className='modal-layer-1'>
                         <Avatar src={avatarImage} round={true} avatarStyle={{ borderWidth: 1, borderColor: 'green', borderRadius: 5, borderStyle: 'solid' }} />
-                        
                         <button onClick={handleClick} type="button" className="btn ml-2"><img src={addPictureIcon} alt="my image" /></button>
                         <input ref={ref} type="file" name='file' onChange={(e) => handleFile(e)} style={{ display: 'none' }} />
-                                               
                         <button type="button" className="btn ml-2"><img src={deletePictureIcon} /></button>
                     </div>
 
@@ -67,14 +102,12 @@ const MyVerticallyCenteredModal = (props) => {
                             placeholder="name@example.com"
                         />
                     </Form.Group>
-
                 </Form>
-
             </Modal.Body>
 
             <Modal.Footer>
                 <Button className='modal-button' onClick={props.onHide}>Cancel</Button>
-                <Button className='modal-button' onClick={props.onHide}>Done</Button>
+                <Button type="submit" className='modal-button' onClick={saveNewContact}>Save</Button>
             </Modal.Footer>
         </Modal>
     )

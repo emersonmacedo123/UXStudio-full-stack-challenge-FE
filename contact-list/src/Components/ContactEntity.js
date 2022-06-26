@@ -24,8 +24,8 @@ const ContactEntity = (props) => {
 
         <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} className='contact-entity'>
           <div>
-            <h3>Name</h3>
-            <h4>Phone Number</h4>
+            <h3>{props.name}</h3>
+            <h4>{props.phoneNumber}</h4>
           </div>
           
           {isHovering && <ContactEntityIcons /> }
